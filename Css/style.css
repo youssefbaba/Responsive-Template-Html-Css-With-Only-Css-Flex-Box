@@ -1,0 +1,503 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #f6d200;
+    --main-space: 20px;
+}
+
+.title-section {
+    text-align: center;
+    font-size: 40px;
+    margin: 40px;
+}
+
+body {
+    background-color: #eee;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+/* Start Header */
+header {
+    background-color: black;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+header div {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header div h1 {
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+header div p {
+    color: var(--main-color);
+    margin: 0;
+    margin-top: -2px;
+    font-style: italic;
+}
+
+header nav {
+    background-color: var(--main-color);
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+header nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+    transition: all 0.5s ease;
+}
+
+header nav ul li a:hover {
+    background-color: black;
+    color: var(--main-color);
+}
+
+/* Small Devices */
+@media(min-width:768px) {
+    header nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    header nav ul li {
+        flex: 1 0;
+    }
+}
+
+/* Large Devices */
+
+@media(min-width:1200px) {
+    header div h1 {
+        font-size: 50px;
+    }
+}
+
+/* End Header */
+
+/* Start Main */
+.main-content section:nth-of-type(1) {
+    padding: 30px 30px 0 30px;
+}
+
+/* Start Section Posts */
+.main-content section:nth-of-type(1) .card {
+    background-color: white;
+    margin-bottom: var(--main-space);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 7px;
+}
+
+.main-content section:nth-of-type(1) .card a {
+    text-decoration: none;
+    color: black;
+}
+
+.main-content section .card a .card-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 7px 7px 0 0;
+}
+
+.main-content section:nth-of-type(1) .card a .card-title {
+    background-color: var(--main-color);
+    text-align: center;
+}
+
+.main-content section:nth-of-type(1) .card a .card-title h4 {
+    margin: 0;
+    padding: var(--main-space);
+    font-size: 20px;
+}
+
+.main-content section:nth-of-type(1) .card a .card-info {
+    padding: calc(var(--main-space) + 10px);
+}
+
+.main-content section:nth-of-type(1) .card a .card-info p {
+    margin: 0;
+}
+
+@media(min-width:768px) {
+    .main-content section:nth-of-type(1) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--main-space);
+    }
+
+    .main-content section:nth-of-type(1) .card {
+        flex-basis: calc((100% - var(--main-space)) / 2);
+        margin: 0;
+    }
+}
+
+@media(min-width:1200px) {
+    .main-content section:nth-of-type(1) .three-card {
+        flex-basis: calc((100% - (var(--main-space) * 2)) / 3);
+    }
+
+    .main-content section:nth-of-type(1) .one-card {
+        flex-basis: 100%;
+    }
+}
+
+/* End Section Posts */
+/* Start Section Watch */
+.main-content section:nth-of-type(2) {
+    padding: 0 30px 0 30px;
+}
+
+.main-content section:nth-of-type(2) .box {
+    color: white;
+    margin-bottom: var(--main-space);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 7px;
+}
+
+.main-content section:nth-of-type(2) .box .box-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 7px 7px 0 0;
+}
+
+.main-content section:nth-of-type(2) .box .box-info {
+    background-color: black;
+    padding: 40px;
+    font-weight: bold;
+    border-radius: 0 0 7px 7px;
+}
+
+.main-content section:nth-of-type(2) .box .box-info h3 {
+    font-size: 30px;
+    margin: 0;
+}
+
+.main-content section:nth-of-type(2) .box .box-info span {
+    display: inline-block;
+    margin: 20px 0;
+    margin-right: 16px;
+}
+
+.main-content section:nth-of-type(2) .box .box-info p {
+    line-height: 1.8;
+    margin: 0 0 20px 0;
+}
+
+.main-content section:nth-of-type(2) .box .box-info a {
+    color: white;
+}
+
+@media(min-width:768px) {
+    .main-content section:nth-of-type(2) .box {
+        display: flex;
+    }
+
+    .main-content section:nth-of-type(2) .box .box-img {
+        flex-basis: 40%;
+    }
+
+    .main-content section:nth-of-type(2) .box .box-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main-content section:nth-of-type(2) .box:nth-child(3) .box-info {
+        order: -1;
+    }
+
+    .main-content section:nth-of-type(2) .box .box-img img {
+        border-radius: 7px 0 0 7px;
+    }
+
+    .main-content section:nth-of-type(2) .box .box-info {
+        border-radius: 0 7px 7px 0;
+    }
+
+    .main-content section:nth-of-type(2) .box:nth-child(3) .box-info {
+        border-radius: 7px 0 0 7px;
+    }
+
+    .main-content section:nth-of-type(2) .box:nth-child(3) .box-img img {
+        border-radius: 0 7px 7px 0;
+    }
+}
+
+/* End Section Watch */
+/* Start Section Download */
+.main-content section:nth-of-type(3) {
+    padding: 0 30px 0 30px;
+}
+
+.main-content section:nth-of-type(3) .card {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 7px;
+}
+
+.main-content section:nth-of-type(3) .card .card-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 7px 7px 0 0;
+}
+
+.main-content section:nth-of-type(3) .card .card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content section:nth-of-type(3) .card .card-content a,
+.main-content section:nth-of-type(3) .card .card-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-content section:nth-of-type(3) .card .card-content a {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: var(--main-space);
+}
+
+.main-content section:nth-of-type(3) .card .card-content a i {
+    font-size: 40px;
+}
+
+.main-content section:nth-of-type(3) .card .card-content .card-info {
+    background-color: white;
+    padding: 20px 30px;
+}
+
+.main-content section:nth-of-type(3) .card .card-content .card-info .card-genre,
+.main-content section:nth-of-type(3) .card .card-content .card-info .card-cast {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.main-content section:nth-of-type(3) .card .card-content .card-info .card-genre {
+    margin-bottom: 10px;
+}
+
+.main-content section:nth-of-type(3) .card .card-content .card-info h4 {
+    margin: 0;
+    flex: 0 0 60px;
+    margin-right: 10%;
+}
+
+.main-content section:nth-of-type(3) .card .card-content .card-info .card-genre p {
+    margin: 0;
+}
+
+.main-content section:nth-of-type(3) .card .card-content .card-info .card-cast img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.main-content section:nth-of-type(3) .card .card-rating {
+    background-color: var(--main-color);
+    padding: var(--main-space);
+    border-radius: 0 0 7px 7px;
+}
+
+.main-content section:nth-of-type(3) .card .card-rating span:first-child {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.main-content section:nth-of-type(3) .card .card-rating span:not(:first-child) {
+    margin-bottom: 5px;
+}
+
+@media(min-width:768px) {
+    .main-content section:nth-of-type(3) .card .card-content {
+        flex-direction: row;
+    }
+
+    .main-content section:nth-of-type(3) .card .card-content a,
+    .main-content section:nth-of-type(3) .card .card-rating {
+        flex-grow: 1;
+    }
+
+    .main-content section:nth-of-type(3) .card .card-content a {
+        border-radius: 0 0 0 7px;
+    }
+
+    .main-content section:nth-of-type(3) .card .card-rating {
+        border-radius: 0 0 7px 0;
+    }
+
+    .main-content section:nth-of-type(3) .card .card-content .card-info {
+        flex-grow: 2;
+    }
+}
+
+/* End Section Download */
+/* Start Section Gallery */
+/* End Section Gallery */
+.main-content section:nth-of-type(4) {
+    padding: 0 30px 0 30px;
+}
+
+.main-content section:nth-of-type(4) .gallery .gallery-img {
+    height: 300px;
+    margin-bottom: var(--main-space);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 7px;
+}
+
+.main-content section:nth-of-type(4) .gallery .gallery-img a img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+@media(min-width:768px) {
+    .main-content section:nth-of-type(4) .gallery .gallery-img {
+        margin: 0;
+    }
+
+    .main-content section:nth-of-type(4) .gallery .gallery-img:nth-child(4n + 1) {
+        flex-basis: 250px;
+        flex-grow: 1;
+    }
+
+    .main-content section:nth-of-type(4) .gallery .gallery-img:nth-child(4n + 2) {
+        flex-basis: 325px;
+        flex-grow: 1;
+    }
+
+    .main-content section:nth-of-type(4) .gallery .gallery-img:nth-child(4n + 3) {
+        flex-basis: 180px;
+        flex-grow: 1;
+    }
+
+    .main-content section:nth-of-type(4) .gallery .gallery-img:nth-child(4n + 4) {
+        flex-basis: 380px;
+        flex-grow: 1;
+    }
+
+    .main-content section:nth-of-type(4) .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+/* Start Aside */
+aside {
+    padding: 30px 30px 0 30px;
+}
+
+aside .box {
+    background-color: white;
+    padding: var(--main-space);
+    margin-bottom: var(--main-space);
+}
+
+aside .box h4 {
+    font-size: 20px;
+    margin: 0;
+}
+
+aside .box ul {
+    list-style: none;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+aside .box ul li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 10px;
+}
+
+/* Small Devices */
+
+@media(min-width:768px) and (max-width:1199px) {
+    aside {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    aside .box {
+        width: calc((100% - 20px) / 2);
+        margin-bottom: 0;
+    }
+
+
+}
+
+/* End Aside */
+/* Large Devices */
+
+@media(min-width:1200px) {
+    main {
+        display: flex;
+        gap: 30px;
+    }
+
+    main aside {
+        flex: 0 0 30%;
+        padding: 30px 30px 0 0;
+    }
+
+    main .main-content {
+        flex-grow: 1;
+    }
+}
+
+/* End Main */
+/* Start Footer */
+footer {
+    background-color: black;
+    margin-top: var(--main-space);
+}
+
+footer p {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+footer p span {
+    color: red;
+}
+
+/* End Footer */
